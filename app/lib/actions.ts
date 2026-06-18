@@ -26,7 +26,6 @@ export async function createInvoice(formData: FormData) {
   });
   const amountInCents = amount * 100;
   const date = new Date().toISOString().split('T')[0];
-<<<<<<< HEAD
   
   try {
     await sql`
@@ -40,13 +39,6 @@ export async function createInvoice(formData: FormData) {
     }
   }
   
-=======
-
-  await sql`
-    INSERT INTO invoices (customer_id, amount, status, date)
-    VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
-  `;
->>>>>>> d2a1775afd8ccb4740a79231f6d9995499a39f74
   revalidatePath('/dashboard/invoices');
   redirect('/dashboard/invoices');
 }
@@ -60,7 +52,6 @@ export async function updateInvoice(id: string, formData: FormData) {
  
   const amountInCents = amount * 100;
  
-<<<<<<< HEAD
   try {
     await sql`
       UPDATE invoices
@@ -74,13 +65,6 @@ export async function updateInvoice(id: string, formData: FormData) {
     };
   }
   
-=======
-  await sql`
-    UPDATE invoices
-    SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
-    WHERE id = ${id}
-  `;
->>>>>>> d2a1775afd8ccb4740a79231f6d9995499a39f74
  
   revalidatePath('/dashboard/invoices');
   redirect('/dashboard/invoices');

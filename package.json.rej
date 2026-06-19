@@ -1,0 +1,11 @@
+diff a/package.json b/package.json	(rejected hunks)
+@@ -3,7 +3,8 @@
+   "scripts": {
+     "build": "next build",
+     "dev": "next dev --turbopack",
+-    "start": "next start"
++    "start": "next start",
++    "lint": "eslint ."
+   },
+   "dependencies": {
+     "@heroicons/react": "^2.2.0",
